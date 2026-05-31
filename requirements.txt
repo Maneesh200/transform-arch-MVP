@@ -1,0 +1,7 @@
+streamlit
+pydantic
+networkx
+matplotlib
+openai
+javalang
+python-dotenv
