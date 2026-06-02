@@ -2,6 +2,7 @@ from agents.architecture_detection_agent import ArchitectureDetectionAgent
 from agents.repository_analyzer_agent import RepositoryAnalyzerAgent
 from agents.dependency_analyzer_agent import DependencyAnalyzerAgent
 from agents.domain_discovery_agent import DomainDiscoveryAgent
+from agents.recommendation_agent import RecommendationAgent
 
 
 class AgentOrchestrator:
@@ -16,8 +17,9 @@ class AgentOrchestrator:
 
             DependencyAnalyzerAgent(),
             
-            DomainDiscoveryAgent()
-    
+            DomainDiscoveryAgent(),
+            
+            RecommendationAgent()
 
         ]
 

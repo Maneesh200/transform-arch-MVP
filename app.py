@@ -5,9 +5,10 @@ from scanners.java_scanner import scan_project
 
 from models.analysis_context import AnalysisContext
 
-from orchestrator.agent_orchestrator \
-    import AgentOrchestrator
-
+from orchestrator.agent_orchestrator import AgentOrchestrator
+from visualizations.dashboard import render_dashboard
+from visualizations.dependency_graph import render_dependency_graph
+from visualizations.domain_view import render_domain_view
 
 st.title("ArchTransform AI")
 
@@ -38,6 +39,11 @@ if uploaded_file:
 
     context = orchestrator.run(context)
 
+    render_dashboard(context)
+
+    render_domain_view(context)
+    # render_dependency_graph(context)
+
     st.subheader("Project Metadata")
 
     st.json(context.project_metadata)
@@ -57,3 +63,7 @@ if uploaded_file:
     st.subheader("Domain Analysis")
 
     st.json(context.domain_analysis)
+
+    st.subheader("Recommendations")
+
+    st.json(context.recommendations)
