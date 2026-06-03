@@ -2,7 +2,6 @@ import streamlit as st
 
 
 def render_dashboard(context):
-    st.error("This dashboard is a work in progress. Please check back later for updates.")
     architecture = context.architecture_detection
     repo = context.repository_analysis
     dependency = context.dependency_analysis
